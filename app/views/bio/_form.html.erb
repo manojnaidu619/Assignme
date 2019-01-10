@@ -1,0 +1,19 @@
+<%= form_for @bio, url: @url do |f| %>
+ <%= f.label 'Full Name:' %>
+ <%= f.text_field :fullname %><br>
+ <%= f.label 'Username' %>
+ <%= f.text_field :username %><br>
+ <%= f.label 'Gender' %>
+ <%= f.select :gender, choose: Bio.genders.keys %><br>  <!-- passing the enum keys from Bio model -->
+ <%= f.label 'Locality' %>
+ <%= f.text_field :locality %><br>
+ <%= f.label 'Occupation' %>
+ <%= f.select :occupation, choose: Bio.occupations.keys %><br>  <!-- passing the enum keys from Bio model -->
+ <%= f.label "Contact Number" %>
+ <%= f.number_field :contact_number %><br>
+ <%= f.label 'school/college Name' %>
+ <%= f.text_field :college_school_name %><br>
+ <%= f.label 'DOB' %>
+ <%= f.date_field :dob %><br>
+ <%= f.submit 'Save' %>
+<% end %>

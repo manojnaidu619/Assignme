@@ -1,6 +1,7 @@
 class BioController < ApplicationController
   def new
    @bio = Bio.new
+   @url = {action: 'create'}
   end
 
  def create
@@ -12,6 +13,19 @@ class BioController < ApplicationController
     end
  end
 
+  def edit
+     @bio = Bio.find(params[:id])
+     @url = {action: 'update'}
+  end
+
+  def update
+    @bio = Bio.find(params[:id])   # for has_one relation
+     if @bio.update(bio_params)
+       redirect_to root_path
+     else
+       render 'new'
+     end
+  end
  private
 
  def bio_params

@@ -1,1 +1,6 @@
 <h1>homepage</h1>
+<% unless !current_user.bio.present? %>
+ <%= link_to "Update Bio", edit_bio_path(current_user.bio) %>
+<% else %>
+ <%= link_to 'Complete Bio', new_bio_path %>
+<% end %>
