@@ -1,7 +1,7 @@
 class BioController < ApplicationController
   def new
    @bio = Bio.new
-   @url = {action: 'create'}
+   @url = {action: 'create'}          # passing to form partial
   end
 
  def create
@@ -15,12 +15,12 @@ class BioController < ApplicationController
 
   def edit
      @bio = Bio.find(params[:id])
-     @url = {action: 'update'}
+     @url = {action: 'update'}      # passing to form partial
   end
 
   def update
-    @bio = Bio.find(params[:id])   # for has_one relation
-     if @bio.update(bio_params)
+    @bio = Bio.find(params[:id])
+     if @bio.update(bio_params)     # Update user bio_params
        redirect_to root_path
      else
        render 'new'
