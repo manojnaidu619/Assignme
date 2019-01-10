@@ -1,7 +1,10 @@
 <h1>homepage</h1>
+<div style="float:right;">
+  <%= link_to current_user.email, edit_user_registration_path if user_signed_in? and user_session %>
+</div>
 <% unless !user_signed_in? or !current_user.bio.present? %>
  <%= link_to "Update Bio", edit_bio_path(current_user.bio) %>
 <% end %>
- <%= link_to 'Complete Bio', new_bio_path if user_signed_in? and !current_user.bio.present? %>
- <%= link_to "SignIn", new_user_session_path if !user_signed_in? %>
-<%= link_to "Logout", destroy_user_session_path, method: :delete if user_signed_in? %>
+ <%= link_to 'Complete Bio', new_bio_path if user_signed_in? and !current_user.bio.present? and user_session %>
+ <%= link_to "SignIn", new_user_session_path if !user_signed_in? and !user_session %>
+<%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "Are you Sure?"} if user_signed_in? and user_session %>
