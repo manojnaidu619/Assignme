@@ -15,6 +15,7 @@ class BioController < ApplicationController
  private
 
  def bio_params
-   params.require(:bio).permit(:fullname, :username, :locality, :occupation, :contact_number, :college_school_name, :dob, :user_id)
+   params.require(:bio).permit(:fullname, :username, :locality, :occupation, :contact_number, :college_school_name, :dob,
+                  :user_id, :gender)
  end
 end
