@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fullname: MyString
+  username: MyString
+  locality: MyString
+  occupation: 1
+  contact_number: 1
+  college_school_name: MyString
+  dob: 2019-01-10 11:18:12
+
+two:
+  fullname: MyString
+  username: MyString
+  locality: MyString
+  occupation: 1
+  contact_number: 1
+  college_school_name: MyString
+  dob: 2019-01-10 11:18:12

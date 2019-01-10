@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_070545) do
+ActiveRecord::Schema.define(version: 2019_01_10_054812) do
+
+  create_table "bios", force: :cascade do |t|
+    t.string "fullname"
+    t.string "username"
+    t.string "locality"
+    t.integer "occupation"
+    t.integer "contact_number"
+    t.string "college_school_name"
+    t.datetime "dob"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
