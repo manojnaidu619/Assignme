@@ -4,6 +4,6 @@ class HomeController < ApplicationController
   end
 
   def desk
-    #code
+    @works = Work.all.order(created_at: :desc)
   end
 end

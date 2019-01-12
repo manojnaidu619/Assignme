@@ -1,0 +1,10 @@
+<%= form_for @work, url: @url do |f| %>
+ <%= f.label 'Title' %>
+ <%= f.text_field :title %><br>
+ <%= f.label 'Description' %>
+ <%= f.text_area :description %><br>
+ <%= f.label 'Price Quote' %>
+ <%= f.number_field :price %><br>
+ <%= f.submit @submit_label %><br><br>
+ <%= link_to 'Cancel', root_path %><br>
+<% end %>
