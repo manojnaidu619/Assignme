@@ -1,2 +1,10 @@
 <h1>homepage</h1>
-<%= link_to "SignIn", new_user_session_path if !user_signed_in? and !user_session %>
+<%= link_to "SignIn", new_user_session_path if !user_signed_in? and !user_session %><br><br>
+<% @works.each do |work| %>
+ <%= work.title %><br>
+ <%= work.description %><br>
+ <%= work.price %><br>
+ by <%= work.user.bio.username %><br>
+ posted <%= time_ago_in_words(work.created_at) %> ago <br>
+ <br>
+<% end %>

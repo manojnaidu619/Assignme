@@ -1,4 +1,7 @@
 class BioController < ApplicationController
+
+  before_action :authenticate_user!
+
   def new
    @bio = Bio.new
    @url = {action: 'create'}          # passing to form partial
