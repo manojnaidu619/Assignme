@@ -17,5 +17,6 @@
  <b>Price : Rs. </b><%= work.price %><br>
  by <%= work.user.bio.username %><br>         <!-- links to User profile -->
  Posted <%= time_ago_in_words(work.created_at) %> ago <br>
- <%= link_to 'Edit', edit_work_path(work) %><br>
+ <%= link_to 'Edit', edit_work_path(work) %> |
+ <%= link_to 'Delete', work_path(work), method: :delete, data: {confirm: "Are you sure?"} %><br>
  <% end %>

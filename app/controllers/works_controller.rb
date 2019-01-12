@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
-  before_action :authenticate_user!     
-  before_action :get_id, only: [:edit, :update]
+  before_action :authenticate_user!
+  before_action :get_id, only: [:edit, :update, :destroy]
 
   def new
     @work = Work.new
@@ -28,6 +28,11 @@ class WorksController < ApplicationController
      else
        render 'new'
      end
+  end
+
+  def destroy
+    @work.delete
+    redirect_to root_path
   end
 
   private
