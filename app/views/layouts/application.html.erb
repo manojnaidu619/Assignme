@@ -10,8 +10,9 @@
   </head>
   <body>
     <!-- Devise notifications -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <b><p class="notice"><%= notice %></p></b>
+    <b><p class="alert"><%= alert %></p></b>
+    <!-- <p class="alert"><%#= flash[:success] %></p> -->    <!-- Usage demo in WorksController -->
     <!-- Devise notifications end -->
     <%= yield %>
   </body>

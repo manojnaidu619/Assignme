@@ -4,18 +4,20 @@
 <% unless !user_signed_in? or !current_user.bio.present? %>
  <%= link_to "Update Bio", edit_bio_path(current_user.bio) %>
 <% end %>
- <%= link_to 'Complete Bio', new_bio_path if user_signed_in? and !current_user.bio.present? and user_session %>
- <%= link_to 'Post Work', new_work_path %>
+ <%= link_to 'Complete Bio', new_bio_path if user_signed_in? and !current_user.bio.present? and user_session %> |
+ <%= link_to 'Post Work', new_work_path %> |
 <%= link_to "Logout", destroy_user_session_path, method: :delete, data: {confirm: "Are you Sure?"} if user_signed_in? and user_session %>
 
 <hr>
+
+ <% if !current_user.works.any? %><b>No works yet! try posting one.. </b> <% else %> <b>My works..</b><% end %><br>
 
 <% @works.each do |work| %>
  <br>
  <%= work.title %><br>
  <%= work.description %><br>
  <b>Price : Rs. </b><%= work.price %><br>
- by <%= work.user.bio.username %><br>         <!-- links to User profile -->
+ by <%= work.user.bio.username if !work.user.bio.username.nil? %><br>         <!-- links to User profile -->
  Posted <%= time_ago_in_words(work.created_at) %> ago <br>
  <%= link_to 'Edit', edit_work_path(work) %> |
  <%= link_to 'Delete', work_path(work), method: :delete, data: {confirm: "Are you sure?"} %><br>

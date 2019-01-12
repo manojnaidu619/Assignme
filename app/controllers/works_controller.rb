@@ -1,6 +1,7 @@
 class WorksController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_id, only: [:edit, :update, :destroy]
+  before_action :get_id, only: [:edit, :update, :destroy]    # before_filter = before_action
+  before_action :make_sure_user_filled_bio
 
   def new
     @work = Work.new
@@ -43,6 +44,15 @@ class WorksController < ApplicationController
 
   def get_id
     @work = Work.find(params[:id])
+  end
+
+  def make_sure_user_filled_bio
+    @bio = current_user.bio.attributes               # attributes methods converts a record to Hash
+    if @bio.has_value?(nil) or @bio.has_value?("")        # Checking for nil/empty values
+      flash[:notice] = 'Fill in your bio to continue...'
+      redirect_to edit_bio_path(current_user.bio)
+      # flash[:success] = 'Fill up the details before posting new work!'        # Demo in layout file
+    end
   end
 
 end
