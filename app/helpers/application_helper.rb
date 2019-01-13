@@ -10,5 +10,5 @@ module ApplicationHelper
     # Datetime formatting : https://hackhands.com/format-datetime-ruby/
     end
   end
-  
+
 end

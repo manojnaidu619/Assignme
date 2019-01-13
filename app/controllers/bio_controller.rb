@@ -25,7 +25,7 @@ class BioController < ApplicationController
   def update
     @bio = Bio.find(params[:id])
      if @bio.update(bio_params)     # Update user bio_params
-       flash[:notice] = "Bio successfully Updated!"
+       flash[:notice] = "Bio successfully Updated!" if @bio.changed?
        redirect_to root_path
      else
        render 'new'

@@ -30,7 +30,7 @@ class WorksController < ApplicationController
 
   def update
      if @work.update(work_params)
-       flash[:notice] = 'Work successfully updated!'
+       flash[:notice] = 'Work successfully updated!' if @work.changed?
        redirect_to root_path
      else
        render 'new'
@@ -63,7 +63,7 @@ class WorksController < ApplicationController
         redirect_to edit_bio_path(current_user.bio)
         # flash[:success] = 'Fill up the details before posting new work!'        # Demo in layout file
       end
-    end  
+    end
   end
 
 end
