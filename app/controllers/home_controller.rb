@@ -8,6 +8,11 @@ class HomeController < ApplicationController
   end
 
   def desk
-    @works = current_user.works.all.order(created_at: :desc) 
+    @works = current_user.works.all.order(created_at: :desc)
+  end
+
+  def category_filter
+    #render plain: params.inspect
+    @category = Category.find(params[:id])
   end
 end

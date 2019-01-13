@@ -1,0 +1,11 @@
+
+<% if @category.works.any? %>
+  <% @category.works.each do |cat| %>
+   <%= cat.title %><br>
+   <%= cat.description %><br>
+   by: <%= cat.user.bio.username %><br>
+  <% end %>
+<% else %>
+ <h2>No Works posted yet!</h2>
+<% end %>
+<%= link_to 'Back', root_path %>
