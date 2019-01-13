@@ -10,6 +10,7 @@ class BioController < ApplicationController
  def create
    @bio = current_user.build_bio(bio_params)   # for has_one relation
     if @bio.save
+      flash[:notice] = 'Successfully added Bio!'
       redirect_to root_path
     else
       render 'new'
@@ -24,6 +25,7 @@ class BioController < ApplicationController
   def update
     @bio = Bio.find(params[:id])
      if @bio.update(bio_params)     # Update user bio_params
+       flash[:notice] = "Bio successfully Updated!"
        redirect_to root_path
      else
        render 'new'

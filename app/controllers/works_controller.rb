@@ -1,7 +1,7 @@
 class WorksController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   before_action :get_id, only: [:edit, :update, :destroy, :show]    # before_filter = before_action
-  before_action :make_sure_user_filled_bio
+  before_action :make_sure_user_filled_bio, except: [:show]
 
   def new
     @work = Work.new
@@ -12,6 +12,7 @@ class WorksController < ApplicationController
   def create
     @work = current_user.works.build(work_params)
      if @work.save
+       flash[:notice] = 'Work posted!'
        redirect_to root_path
      else
        render 'new'
@@ -29,6 +30,7 @@ class WorksController < ApplicationController
 
   def update
      if @work.update(work_params)
+       flash[:notice] = 'Work successfully updated!'
        redirect_to root_path
      else
        render 'new'
