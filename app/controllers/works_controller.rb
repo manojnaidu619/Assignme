@@ -53,12 +53,17 @@ class WorksController < ApplicationController
   end
 
   def make_sure_user_filled_bio
-    @bio = current_user.bio.attributes               # attributes methods converts a record to Hash
-    if @bio.has_value?(nil) or @bio.has_value?("")        # Checking for nil/empty values
-      flash[:notice] = 'Fill in your bio to continue...'
-      redirect_to edit_bio_path(current_user.bio)
-      # flash[:success] = 'Fill up the details before posting new work!'        # Demo in layout file
-    end
+    if !current_user.bio.present?
+      flash[:alert] = 'Complete the Bio before continuing..'
+      redirect_to new_bio_path
+    else
+      @bio = current_user.bio.attributes               # attributes methods converts a record to Hash
+      if @bio.has_value?(nil) or @bio.has_value?("")        # Checking for nil/empty values
+        flash[:notice] = 'Fill in your bio to continue...'
+        redirect_to edit_bio_path(current_user.bio)
+        # flash[:success] = 'Fill up the details before posting new work!'        # Demo in layout file
+      end
+    end  
   end
 
 end

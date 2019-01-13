@@ -2,8 +2,6 @@
 
 one:
   name: MyString
-  work: one
 
 two:
   name: MyString
-  work: two
