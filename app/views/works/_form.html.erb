@@ -3,6 +3,8 @@
  <%= f.text_field :title %><br>
  <%= f.label 'Description' %>
  <%= f.text_area :description %><br>
+ <%= f.label 'Category : ' %>
+ <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"} %><br>
  <%= f.label 'Deadline :' %>
  <%= f.date_field :work_end_at, min: Date.today %><br>
  <%= f.label 'Price Quote' %>
