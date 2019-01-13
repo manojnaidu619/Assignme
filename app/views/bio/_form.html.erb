@@ -10,7 +10,7 @@
  <%= f.label 'Occupation' %>
  <%= f.select :occupation, choose: Bio.occupations.keys %><br>  <!-- passing the enum keys from Bio model -->
  <%= f.label "Contact Number" %>
- <%= f.number_field :contact_number %><br>
+ <%= f.telephone_field :contact_number %><br>
  <%= f.label 'school/college Name' %>
  <%= f.text_field :college_school_name %><br>
  <%= f.label 'DOB' %>

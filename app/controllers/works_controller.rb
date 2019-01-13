@@ -39,7 +39,7 @@ class WorksController < ApplicationController
   private
 
   def work_params
-    params.require(:work).permit(:id, :title, :description, :price)
+    params.require(:work).permit(:id, :title, :description, :price, :work_end_at)
   end
 
   def get_id

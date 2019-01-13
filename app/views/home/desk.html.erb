@@ -16,6 +16,7 @@
  <br>
  <%= work.title %><br>
  <%= work.description %><br>
+ Deadline : <%= get_deadline(work) %><br>       <!-- in application_helper.rb -->
  <b>Price : Rs. </b><%= work.price %><br>
  by <%= work.user.bio.username if !work.user.bio.username.nil? %><br>         <!-- links to User profile -->
  Posted <%= time_ago_in_words(work.created_at) %> ago <br>

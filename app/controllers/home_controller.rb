@@ -8,6 +8,6 @@ class HomeController < ApplicationController
   end
 
   def desk
-    @works = current_user.works.all.order(created_at: :desc)
+    @works = current_user.works.all.order(created_at: :desc) 
   end
 end

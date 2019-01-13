@@ -3,6 +3,7 @@
 <% @works.each do |work| %>
  <%= work.title %><br>
  <%= work.description %><br>
+ Deadline : <%= get_deadline(work) %><br>       <!-- in application_helper.rb -->
  <%= work.price %><br>
  by <%= work.user.bio.username %><br>
  posted <%= time_ago_in_words(work.created_at) %> ago <br>
