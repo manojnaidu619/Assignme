@@ -1,0 +1,12 @@
+<h2><%= @work.title %></h2>
+<h3><%= @work.description %></h3>
+<h3>Price : <i><%= @work.price %></i></h3>
+<b>Deadline : <%= get_deadline(@work) %></b> <br>
+Posted <%= time_ago_in_words(@work.created_at) %> ago <br><br>
+Contact details : <br>
+ Email : <%= @work.user.email %><br>
+ Phone : <%= @work.user.bio.contact_number %><br>
+<hr>
+Posted by: <br>
+<%= @work.user.bio.username %>, <%= @work.user.bio.gender %> <br>
+<%= @work.user.bio.locality %><br>

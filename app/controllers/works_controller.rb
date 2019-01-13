@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_id, only: [:edit, :update, :destroy]    # before_filter = before_action
+  before_action :get_id, only: [:edit, :update, :destroy, :show]    # before_filter = before_action
   before_action :make_sure_user_filled_bio
 
   def new
@@ -21,6 +21,9 @@ class WorksController < ApplicationController
   def edit
     @url = {action: 'update'}
     @submit_label = 'Update'
+  end
+
+  def show
   end
 
   def update
