@@ -14,5 +14,6 @@ class HomeController < ApplicationController
   def category_filter
     #render plain: params.inspect
     @category = Category.find(params[:id])
+    @categories_with_works = @category.works.all.order(created_at: :desc)
   end
 end

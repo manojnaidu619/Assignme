@@ -1,6 +1,7 @@
 class BioController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :get_bio_id, only: [:edit, :update]
 
   def new
    @bio = Bio.new
@@ -31,10 +32,17 @@ class BioController < ApplicationController
        render 'new'
      end
   end
+
+
  private
 
  def bio_params
    params.require(:bio).permit(:fullname, :username, :locality, :occupation, :contact_number, :college_school_name, :dob,
                   :user_id, :gender)
  end
+
+ def get_bio_id
+   @bio = Bio.find(params[:id])
+ end
+
 end
