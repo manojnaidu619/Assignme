@@ -1,4 +1,3 @@
-
 <% if @category.works.any? %>
   <% @category.works.each do |cat| %>
    <%= cat.title %><br>
@@ -8,4 +7,5 @@
 <% else %>
  <h2>No Works posted yet!</h2>
 <% end %>
+<br>
 <%= link_to 'Back', root_path %>

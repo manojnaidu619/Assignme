@@ -4,8 +4,9 @@
  <%= work.title %><br>
  <%= work.description %><br>
  Deadline : <%= get_deadline(work) %><br>       <!-- in application_helper.rb -->
- <%= work.price %><br>
+ Price : <%= work.price %><br>
  by <%= work.user.bio.username %><br>
+ category : <%= link_to work.category.name, category_filter_path(work.category) %><br>
  posted <%= time_ago_in_words(work.created_at) %> ago <br>
  <%= link_to 'View', work_path(work) %><br>
  <br>
