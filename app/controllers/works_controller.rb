@@ -24,6 +24,7 @@ class WorksController < ApplicationController
   end
 
   def show
+     @work_user_bio = @work.user.bio     # For sql optimization
   end
 
   def update

@@ -5,8 +5,8 @@
 Posted <%= time_ago_in_words(@work.created_at) %> ago <br><br>
 Contact details : <br>
  Email : <%= @work.user.email %><br>
- Phone : <%= @work.user.bio.contact_number %><br>
+ Phone : <%= @work_user_bio.contact_number %><br>
 <hr>
 Posted by: <br>
-<%= @work.user.bio.username %>, <%= @work.user.bio.gender %> <br>
-<%= @work.user.bio.locality %><br>
+<%= @work_user_bio.username %>, <%= @work_user_bio.gender %> <br>
+<%= @work_user_bio.locality %><br>
