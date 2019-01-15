@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_15_130412) do
+ActiveRecord::Schema.define(version: 2019_01_15_144908) do
 
   create_table "bios", force: :cascade do |t|
     t.string "fullname"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_01_15_130412) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "gender", default: 0
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "categories", force: :cascade do |t|
