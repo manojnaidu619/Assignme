@@ -12,9 +12,11 @@
     <!-- Devise notifications -->
     <b><p class="notice"><%= notice %></p></b>
     <b><p class="alert"><%= alert %></p></b>
-    <% Category.all.each do |cat| %>
-     <%= link_to cat.name, category_filter_path(cat) %> &nbsp;
-    <% end %><br><br>
+    <% if user_signed_in? and user_session %>
+      <% Category.all.each do |cat| %>
+       <%= link_to cat.name, category_filter_path(cat) %> &nbsp;
+      <% end %><br><br>
+    <% end %>  
     <!-- <p class="alert"><%#= flash[:success] %></p> -->    <!-- Usage demo in WorksController -->
     <!-- Devise notifications end -->
     <%= yield %>

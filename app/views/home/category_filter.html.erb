@@ -3,9 +3,12 @@
    <%= cat.title %><br>
    <%= cat.description %><br>
    by: <%= cat.user.bio.username %><br>
+   <%= link_to 'View', work_path(cat) %>
   <% end %>
 <% else %>
  <h2>No Works posted yet!</h2>
 <% end %>
+<br>
+<br>
 <br>
 <%= link_to 'Back', root_path %>

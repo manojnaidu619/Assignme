@@ -8,7 +8,7 @@
  <%= f.label 'Deadline :' %>
  <%= f.date_field :work_end_at, min: Date.today %><br>
  <%= f.label 'Price Quote' %>
- <%= f.number_field :price %><br>
+ <%= f.number_field :price, min: 0 %><br>
  <%= f.submit @submit_label %><br><br>
  <%= link_to 'Cancel', root_path %><br>
 <% end %>
