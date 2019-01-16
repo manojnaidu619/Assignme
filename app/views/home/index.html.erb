@@ -15,19 +15,3 @@
     <% end %>
   <% end %>
 <% end %><br><br>
-
-<!--
-<div class="container" style='height:200px;width:200px;'>
-  <img src="https://maps.googleapis.com/maps/api/staticmap?size=400x400&key=AIzaSyCXLPXN4LCHjrR8YFSZt5okpDVpv-drPm4" alt="google static map">
-</div>
--->
-<div id='map' style='width: 400px; height: 300px;'></div>
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoibWFub2puYWlkdTYxOSIsImEiOiJjanF6YXh2NjgwY2ZuM3lzN2ZrMms5aW42In0.j_DfLYhTZijNVwUw73OC9Q';
-var map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/streets-v11',
-center: [-122.420679, 37.772537],
-zoom: 13
-});
-</script>
