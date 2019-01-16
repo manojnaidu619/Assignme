@@ -7,7 +7,7 @@
      <%= work.description %><br>
      Deadline : <%= get_deadline(work) %><br>       <!-- in application_helper.rb -->
      Price : <%= work.price %><br>
-     by <%= link_to work.user.bio.username, user_path(work.user) %><br>
+     by <%= link_to work.user.bio.username, user_path(work.user) if work.user %><br>
      category : <%= link_to work.category.name, category_filter_path(work.category) %><br>
      posted <%= time_ago_in_words(work.created_at) %> ago <br>
      <%= link_to 'Apply', work_path(work) %><br>
@@ -15,6 +15,19 @@
     <% end %>
   <% end %>
 <% end %><br><br>
+
 <!--
-<img src="https://maps.googleapis.com/maps/api/staticmap?center=Bangalore,KA&zoom=14&size=400x400&key=AIzaSyCXLPXN4LCHjrR8YFSZt5okpDVpv-drPm4" alt="google static map">
+<div class="container" style='height:200px;width:200px;'>
+  <img src="https://maps.googleapis.com/maps/api/staticmap?size=400x400&key=AIzaSyCXLPXN4LCHjrR8YFSZt5okpDVpv-drPm4" alt="google static map">
+</div>
 -->
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFub2puYWlkdTYxOSIsImEiOiJjanF6YXh2NjgwY2ZuM3lzN2ZrMms5aW42In0.j_DfLYhTZijNVwUw73OC9Q';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-122.420679, 37.772537],
+zoom: 13
+});
+</script>

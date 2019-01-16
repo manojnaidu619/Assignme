@@ -7,6 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
   </head>
   <body>
     <!-- Devise notifications -->
@@ -16,7 +19,7 @@
       <% Category.all.each do |cat| %>
        <%= link_to cat.name, category_filter_path(cat) %> &nbsp;
       <% end %><br><br>
-    <% end %>  
+    <% end %>
     <!-- <p class="alert"><%#= flash[:success] %></p> -->    <!-- Usage demo in WorksController -->
     <!-- Devise notifications end -->
     <%= yield %>

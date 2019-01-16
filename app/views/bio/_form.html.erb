@@ -5,6 +5,8 @@
  <%= f.text_field :username %><br>
  <%= f.label 'Gender' %>
  <%= f.select :gender, choose: Bio.genders.keys %><br>  <!-- passing the enum keys from Bio model -->
+ <%= f.label 'City' %>
+ <%= f.text_field :city %><br>
  <%= f.label 'Locality' %>
  <%= f.text_field :locality %><br>
  <%= f.label 'Occupation' %>

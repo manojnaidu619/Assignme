@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_15_144908) do
+ActiveRecord::Schema.define(version: 2019_01_15_161248) do
 
   create_table "bios", force: :cascade do |t|
     t.string "fullname"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_01_15_144908) do
     t.integer "gender", default: 0
     t.float "latitude"
     t.float "longitude"
+    t.string "city"
   end
 
   create_table "categories", force: :cascade do |t|
