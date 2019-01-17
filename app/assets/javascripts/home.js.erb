@@ -7,7 +7,7 @@ $(document).ready(function() {
   zoom: 13
   });
 
-  map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/400px-Cat_silhouette.svg.png', function(error, image) {
+  map.loadImage("<%= asset_path('marker.png') %>", function(error, image) {
       if (error) throw error;
       map.addImage('marker', image);
       map.addLayer({
@@ -28,7 +28,7 @@ $(document).ready(function() {
           },
           "layout": {
               "icon-image": "marker",
-              "icon-size": 0.10
+              "icon-size": 0.20
           }
       });
   });
