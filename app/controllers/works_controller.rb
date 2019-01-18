@@ -26,7 +26,6 @@ class WorksController < ApplicationController
 
   def show
      @work_user_bio = @work.user.bio     # For sql optimization
-     gon.lat_long = [@work_user_bio.latitude, @work_user_bio.longitude].reverse
   end
 
   def update

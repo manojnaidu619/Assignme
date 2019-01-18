@@ -3,7 +3,7 @@ $(document).ready(function() {
   var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11',
-  center: gon.lat_long,
+  center: [77.6911295, 12.710525899999999],
   zoom: 13
   });
 
@@ -32,4 +32,8 @@ $(document).ready(function() {
           }
       });
   });
+
+  var data = <%= @js.to_json %>;
+  console.log(data);
+
 })
