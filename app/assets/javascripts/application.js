@@ -15,3 +15,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load',function(){
+  $('#map').hide();                               // Hide by deafult!
+  $('#map_div').click(function(){
+    $('#map').toggle();
+  })
+})

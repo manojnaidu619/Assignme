@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on("turbolinks:load",function() {       // On turbolinks Load!
   mapboxgl.accessToken = 'pk.eyJ1IjoibWFub2puYWlkdTYxOSIsImEiOiJjanF6YXh2NjgwY2ZuM3lzN2ZrMms5aW42In0.j_DfLYhTZijNVwUw73OC9Q';
   var map = new mapboxgl.Map({
   container: 'map',
